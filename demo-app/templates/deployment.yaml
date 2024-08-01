@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "demo-app.fullname" . }}
+  labels:
+    app: {{ include "demo-app.name" . }}
+    type: nextjs
+
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "demo-app.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "demo-app.name" . }}
+    spec:
+      containers:
+      - name: nextjs
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        ports:
+        - containerPort: {{ .Values.service.port }}

@@ -11,9 +11,11 @@ env:
   CHART_OVERRIDE_PATH: MY_OVERRIDE_FILES     # set this to an array of override file paths
 
 on: 
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    
+  # push:
+  #   branches:
+  #     - main
 
 permissions:
    id-token: write
