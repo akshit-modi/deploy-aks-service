@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: nextjsdemoproject.azurecr.io/demo-test
+  repository: nextjsdemoproject.azurecr.io/demo
   tag: v1
   pullPolicy: IfNotPresent
 
